@@ -1,0 +1,47 @@
+<div class="container mt-5 mb-5">
+  <h2>Günlük Görev Listesi</h2>
+  <ul class="responsive-table">
+    <li class="table-header">
+      <div class="col col-2">Görev Adı</div>
+      <div class="col col-3">Görev Başlangıç Tarihi</div>
+      <div class="col col-4">Görev Bitiş Tarihi</div>
+    </li>
+    <li *ngFor="let daily of allDailyTask" class="table-row">
+      <div class="col col-2">{{daily.taskName}}</div>
+      <div class="col col-3">{{daily.taskStartDate| date: 'dd/MM/yyyy'}}</div>
+      <div class="col col-4">{{daily.taskEndDate| date: 'dd/MM/yyyy'}}</div>
+    </li>
+  </ul>
+</div>
+
+<div class="container mt-5 mb-5">
+  <h2>Haftalık Görev Listesi</h2>
+  <ul class="responsive-table">
+    <li class="table-header">
+      <div class="col col-2">Görev Adı</div>
+      <div class="col col-3">Görev Başlangıç Tarihi</div>
+      <div class="col col-4">Görev Bitiş Tarihi</div>
+    </li>
+    <li *ngFor="let weekly of allWeeklyTask" class="table-row">
+      <div class="col col-2" data-label="Customer Name">{{weekly.taskName}}</div>
+      <div class="col col-3" data-label="Amount">{{weekly.taskStartDate| date: 'dd/MM/yyyy'}}</div>
+      <div class="col col-4" data-label="Payment Status">{{weekly.taskEndDate| date: 'dd/MM/yyyy'}}</div>
+    </li>
+  </ul>
+</div>
+
+<div class="container mt-5">
+  <h2>Aylık Görev Listesi</h2>
+  <ul class="responsive-table">
+    <li class="table-header">
+      <div class="col col-2">Görev Adı</div>
+      <div class="col col-3">Görev Başlangıç Tarihi</div>
+      <div class="col col-4">Görev Bitiş Tarihi</div>
+    </li>
+    <li *ngFor="let monthly of allMonthlyTask" class="table-row">
+      <div class="col col-2" data-label="Customer Name">{{monthly.taskName}}</div>
+      <div class="col col-3" data-label="Amount">{{monthly.taskStartDate| date: 'dd/MM/yyyy'}}</div>
+      <div class="col col-4" data-label="Payment Status">{{monthly.taskEndDate| date: 'dd/MM/yyyy'}}</div>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,53 @@
+<body>
+  <div class="container mt-5">
+    <div class="text-center mt-4">
+      <h4>Görev Ekleme Formu</h4>
+    </div>
+    <div class="content">
+      <form [formGroup]="addTaskForm" class="addTask">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Görev Adı</span>
+            <input type="text" formControlName="taskName" required>
+          </div>
+        </div>
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Görev Başlangıç Tarihi</span>
+            <input type="date" formControlName="taskStartDate" required >
+          </div>
+        </div>
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Görev Bitiş Tarihi</span>
+            <input type="date" formControlName="taskEndDate" required>
+          </div>
+        </div>
+        <div class="gender-details">
+          <input type="radio" name="gender" value="Günlük" id="dot-1" (change)="onItemChange($event.target)">
+          <input type="radio" name="gender" value="Haftalık" id="dot-2" (change)="onItemChange($event.target)">
+          <input type="radio" name="gender" value="Aylık" id="dot-3" (change)="onItemChange($event.target)">
+          <span class="gender-title">Görev Türü</span>
+          <div class="category">
+            <label for="dot-1">
+              <span class="dot one"></span>
+              <span class="gender">Günlük</span>
+            </label>
+            <label for="dot-2">
+              <span class="dot two"></span>
+              <span class="gender">Haftalık</span>
+            </label>
+            <label for="dot-3">
+              <span class="dot three"></span>
+              <span class="gender">Aylık</span>
+            </label>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="Ekle" (click)="addTask()">
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>

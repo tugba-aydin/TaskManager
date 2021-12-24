@@ -1,0 +1,32 @@
+<body>
+  <div class="container">
+    <div class="text-center mt-4">
+      <h4>Aylık Görev Düzenleme Formu</h4>
+    </div>
+    <div class="content">
+      <form [formGroup]="editMonthly">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Görev Adı</span>
+            <input type="text" formControlName="taskName" [(ngModel)]="editMonthlyTaskModel.taskName" required>
+          </div>
+        </div>
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Görev Başlangıç Tarihi</span>
+            <input type="date" formControlName="taskStartDate" [ngModel]="editMonthlyTaskModel.taskStartDate | date:'yyyy-MM-dd'" required>
+          </div>
+        </div>
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Görev Bitiş Tarihi</span>
+            <input type="date" formControlName="taskEndDate" [ngModel]="editMonthlyTaskModel.taskEndDate | date:'yyyy-MM-dd'"required>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="Güncelle" (click)="editMonthlyTask()">
+        </div>
+      </form>
+    </div>
+  </div>
+</body>

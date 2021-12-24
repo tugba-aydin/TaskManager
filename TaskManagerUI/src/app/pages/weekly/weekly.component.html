@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="text-center mt-4">
+    <h4>Haftalık Görevler</h4>
+  </div>
+  <div class="row">
+    <div *ngFor="let weeklies of weekliesData" class="col-4">
+      <div class="card border-light mt-3">
+        <div class="card-body">
+          <h4 class="card-title">{{weeklies.taskName}}</h4>
+          <p class="card-text">{{weeklies.taskStartDate | date: 'dd/MM/yyyy'}}</p>
+          <p class="card-text">{{weeklies.taskEndDate | date: 'dd/MM/yyyy'}}</p>
+          <button type="button" class="btn btn-primary btn-sm" (click)="editWeeklyTask(weeklies)">Düzenle</button>
+          <button type="button" class="btn btn-info btn-sm" (click)="deleteWeeklyTask(weeklies.id)">Kaldır</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
